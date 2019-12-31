@@ -1,4 +1,5 @@
 from arm import Arm
+from conf import rod_count
 from pie import Pie
 from random import random, seed, shuffle, uniform
 from rod import Rod
@@ -67,7 +68,7 @@ class Evolver:
         self.lab_params = lab_params
     
     def evolve(self):
-        population = [Dna(2) for i in range(self.population_size)]
+        population = [Dna(rod_count) for i in range(self.population_size)]
 
         for g in range(self.generations):
             population.sort(key=lambda x: self.fitness(x), reverse=True)
